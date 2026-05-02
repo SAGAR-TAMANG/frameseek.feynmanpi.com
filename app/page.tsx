@@ -1,6 +1,9 @@
 'use client'
 
 import { ArrowRight, Play } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 
 export default function Home() {
   return (
@@ -23,12 +26,8 @@ export default function Home() {
                 Pricing
               </a>
               <div className="flex items-center gap-3">
-                <button className="text-sm font-medium border border-border px-4 py-2 rounded hover:bg-card transition-colors">
-                  Sign in
-                </button>
-                <button className="text-sm font-medium bg-primary text-primary-foreground px-4 py-2 rounded hover:opacity-90 transition-opacity">
-                  Book a demo
-                </button>
+                <Button variant="outline" size="sm">Sign in</Button>
+                <Button size="sm">Book a demo</Button>
               </div>
             </div>
           </div>
@@ -39,9 +38,9 @@ export default function Home() {
       <section className="py-20 sm:py-32 border-b border-border">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-6">
-            <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
+            <Badge variant="secondary">
               Video Intelligence
-            </span>
+            </Badge>
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-pretty">
             Find your moments, not your files.
@@ -50,14 +49,14 @@ export default function Home() {
             Search your entire video library using natural language. Upload once, search infinitely. Available on Windows and Mac.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-primary text-primary-foreground px-6 py-3 rounded font-medium hover:opacity-90 transition-opacity flex items-center gap-2">
+            <Button size="lg">
               Get started free
-              <ArrowRight className="w-4 h-4" />
-            </button>
-            <button className="border border-border px-6 py-3 rounded font-medium hover:bg-card transition-colors flex items-center gap-2">
-              <Play className="w-4 h-4" />
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+            <Button size="lg" variant="outline">
+              <Play className="mr-2 w-4 h-4" />
               Watch demo
-            </button>
+            </Button>
           </div>
         </div>
       </section>
@@ -68,9 +67,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="mb-4">
-                <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
+                <Badge variant="outline">
                   Indexing
-                </span>
+                </Badge>
               </div>
               <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
                 Upload once. Index forever.
@@ -93,17 +92,19 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="bg-card rounded border border-border p-8 h-96 flex items-center justify-center">
-              <div className="text-center text-muted-foreground">
-                <div className="w-20 h-20 bg-secondary rounded-lg mx-auto mb-4 flex items-center justify-center">
-                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+            <Card>
+              <CardContent className="pt-6">
+                <div className="text-center text-muted-foreground">
+                  <div className="w-20 h-20 bg-secondary rounded-lg mx-auto mb-4 flex items-center justify-center">
+                    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <p className="text-sm">Upload videos to index</p>
                 </div>
-                <p className="text-sm">Upload videos to index</p>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -112,25 +113,29 @@ export default function Home() {
       <section className="py-20 sm:py-28 border-b border-border">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-card rounded border border-border p-8 h-96 flex items-center justify-center order-last md:order-first">
-              <div className="text-center text-muted-foreground w-full">
-                <div className="bg-secondary rounded-lg p-4 mb-4">
-                  <p className="text-sm font-mono text-foreground">
-                    Search: "red car passes by"
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <div className="bg-secondary/50 rounded p-3 text-sm">Match 1 - 94%</div>
-                  <div className="bg-secondary/50 rounded p-3 text-sm">Match 2 - 87%</div>
-                  <div className="bg-secondary/50 rounded p-3 text-sm">Match 3 - 76%</div>
-                </div>
-              </div>
+            <div className="order-last md:order-first">
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="text-center text-muted-foreground w-full">
+                    <div className="bg-secondary rounded-lg p-4 mb-4">
+                      <p className="text-sm font-mono text-foreground">
+                        Search: "red car passes by"
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="bg-secondary/50 rounded p-3 text-sm">Match 1 - 94%</div>
+                      <div className="bg-secondary/50 rounded p-3 text-sm">Match 2 - 87%</div>
+                      <div className="bg-secondary/50 rounded p-3 text-sm">Match 3 - 76%</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
             <div>
               <div className="mb-4">
-                <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
+                <Badge variant="outline">
                   Search
-                </span>
+                </Badge>
               </div>
               <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
                 Search like you speak.
@@ -163,9 +168,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="mb-4">
-                <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
+                <Badge variant="outline">
                   Results
-                </span>
+                </Badge>
               </div>
               <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
                 Quick clips, ready to share.
@@ -188,22 +193,24 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="bg-card rounded border border-border p-8 h-96 flex items-center justify-center">
-              <div className="text-center text-muted-foreground w-full space-y-3">
-                <div className="bg-secondary/50 rounded-lg p-4 flex items-center justify-between">
-                  <span className="text-sm">Match 1</span>
-                  <span className="text-xs font-mono">00:45 - 00:52</span>
+            <Card>
+              <CardContent className="pt-6">
+                <div className="text-center text-muted-foreground w-full space-y-3">
+                  <div className="bg-secondary/50 rounded-lg p-4 flex items-center justify-between">
+                    <span className="text-sm">Match 1</span>
+                    <span className="text-xs font-mono">00:45 - 00:52</span>
+                  </div>
+                  <div className="bg-secondary/50 rounded-lg p-4 flex items-center justify-between">
+                    <span className="text-sm">Match 2</span>
+                    <span className="text-xs font-mono">03:12 - 03:18</span>
+                  </div>
+                  <div className="bg-secondary/50 rounded-lg p-4 flex items-center justify-between">
+                    <span className="text-sm">Match 3</span>
+                    <span className="text-xs font-mono">07:33 - 07:40</span>
+                  </div>
                 </div>
-                <div className="bg-secondary/50 rounded-lg p-4 flex items-center justify-between">
-                  <span className="text-sm">Match 2</span>
-                  <span className="text-xs font-mono">03:12 - 03:18</span>
-                </div>
-                <div className="bg-secondary/50 rounded-lg p-4 flex items-center justify-between">
-                  <span className="text-sm">Match 3</span>
-                  <span className="text-xs font-mono">07:33 - 07:40</span>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -212,9 +219,9 @@ export default function Home() {
       <section className="py-20 sm:py-28 border-b border-border">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-6">
-            <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
+            <Badge variant="secondary">
               Platform Support
-            </span>
+            </Badge>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold mb-8 leading-tight">
             Built for your desktop.
@@ -223,34 +230,38 @@ export default function Home() {
             frameseek is available as a native application for both Windows and macOS. Enjoy instant search and offline processing with the familiarity of a desktop app.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-card border border-border rounded-lg p-8 text-center hover:border-border transition-colors">
-              <div className="w-16 h-16 bg-secondary rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.05 13.5H6.95m10.1 0l-.5-5h-9.1l-.5 5M6.5 19h11l.5-5H6l.5 5z" strokeWidth="1.5" stroke="currentColor" fill="none"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Windows 10+</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                Full support for Windows 10 and newer, with GPU acceleration on compatible systems.
-              </p>
-              <button className="text-primary hover:opacity-80 transition-opacity text-sm font-medium">
-                Download →
-              </button>
-            </div>
-            <div className="bg-card border border-border rounded-lg p-8 text-center hover:border-border transition-colors">
-              <div className="w-16 h-16 bg-secondary rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17 2H7c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" strokeWidth="0"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">macOS 11+</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                Native app for Intel and Apple Silicon Macs with seamless Spotlight integration.
-              </p>
-              <button className="text-primary hover:opacity-80 transition-opacity text-sm font-medium">
-                Download →
-              </button>
-            </div>
+            <Card>
+              <CardContent className="pt-6">
+                <div className="w-16 h-16 bg-secondary rounded-lg mx-auto mb-4 flex items-center justify-center">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.05 13.5H6.95m10.1 0l-.5-5h-9.1l-.5 5M6.5 19h11l.5-5H6l.5 5z" strokeWidth="1.5" stroke="currentColor" fill="none"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Windows 10+</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Full support for Windows 10 and newer, with GPU acceleration on compatible systems.
+                </p>
+                <Button variant="link">
+                  Download &rarr;
+                </Button>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <div className="w-16 h-16 bg-secondary rounded-lg mx-auto mb-4 flex items-center justify-center">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17 2H7c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" strokeWidth="0"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">macOS 11+</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Native app for Intel and Apple Silicon Macs with seamless Spotlight integration.
+                </p>
+                <Button variant="link">
+                  Download &rarr;
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -264,9 +275,9 @@ export default function Home() {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join creators and professionals who never waste time searching for footage again.
           </p>
-          <button className="bg-primary text-primary-foreground px-8 py-4 rounded font-medium hover:opacity-90 transition-opacity text-lg">
+          <Button size="lg">
             Get started free
-          </button>
+          </Button>
           <p className="text-sm text-muted-foreground mt-6">
             No credit card required. Download now.
           </p>
