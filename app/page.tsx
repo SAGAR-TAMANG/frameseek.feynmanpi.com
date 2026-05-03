@@ -143,126 +143,55 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <Card>
-              <CardContent className="pt-6">
-                <div className="text-center text-muted-foreground">
-                  <div className="w-20 h-20 bg-secondary rounded-lg mx-auto mb-4 flex items-center justify-center">
-                    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <p className="text-sm">Upload videos to index</p>
-                </div>
-              </CardContent>
-            </Card>
+            <video src="/scan-building-2.mp4" autoPlay loop muted playsInline />
           </div>
         </div>
       </section >
 
-      {/* Feature 2: Natural Language Search */}
+      {/* Feature 2 & 3: Search & Export Combined */}
       <section className="py-20 sm:py-28 border-b border-border" >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-last md:order-first">
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="text-center text-muted-foreground w-full">
-                    <div className="bg-secondary rounded-lg p-4 mb-4">
-                      <p className="text-sm font-mono text-foreground">
-                        Search: "red car passes by"
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="bg-secondary/50 rounded p-3 text-sm">Match 1 - 94%</div>
-                      <div className="bg-secondary/50 rounded p-3 text-sm">Match 2 - 87%</div>
-                      <div className="bg-secondary/50 rounded p-3 text-sm">Match 3 - 76%</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-            <div>
-              <div className="mb-4">
-                <Badge variant="outline">
-                  Search
-                </Badge>
-              </div>
-              <h2 className="!font-playfair font-normal text-4xl sm:text-5xl mb-6 leading-tight">
-                Search like you <span className='italic'>speak</span>.
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Just describe what you&apos;re looking for. "Red car passes by me." "Someone wearing a blue jacket." "People laughing in the park." Our AI understands your intent and finds matching moments in seconds.
-              </p>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold mt-1">✓</span>
-                  <span>Semantic search — find by meaning, not keywords</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold mt-1">✓</span>
-                  <span>Confidence scores for relevance ranking</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold mt-1">✓</span>
-                  <span>Instant results from your entire library</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section >
 
-      {/* Feature 3: Results & Export */}
-      <section className="py-20 sm:py-28 border-b border-border" >
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="mb-4">
-                <Badge variant="outline">
-                  Results
-                </Badge>
-              </div>
-              <h2 className="!font-playfair font-normal text-4xl sm:text-5xl mb-6 leading-tight">
-                Quick clips, ready to <span className='italic'>share</span>.
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Every search result comes with precise timestamps. Jump straight to the moment you need, preview in context, and export clips in seconds. No re-editing required.
-              </p>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold mt-1">✓</span>
-                  <span>Precise frame-level timestamps</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold mt-1">✓</span>
-                  <span>One-click export to common formats</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold mt-1">✓</span>
-                  <span>Batch operations for multiple results</span>
-                </li>
-              </ul>
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <div className="mb-4">
+              <Badge variant="outline">
+                Search & Export
+              </Badge>
             </div>
-            <Card>
-              <CardContent className="pt-6">
-                <div className="text-center text-muted-foreground w-full space-y-3">
-                  <div className="bg-secondary/50 rounded-lg p-4 flex items-center justify-between">
-                    <span className="text-sm">Match 1</span>
-                    <span className="text-xs font-mono">00:45 - 00:52</span>
-                  </div>
-                  <div className="bg-secondary/50 rounded-lg p-4 flex items-center justify-between">
-                    <span className="text-sm">Match 2</span>
-                    <span className="text-xs font-mono">03:12 - 03:18</span>
-                  </div>
-                  <div className="bg-secondary/50 rounded-lg p-4 flex items-center justify-between">
-                    <span className="text-sm">Match 3</span>
-                    <span className="text-xs font-mono">07:33 - 07:40</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <h2 className="!font-playfair font-normal text-4xl sm:text-5xl mb-6 leading-tight">
+              Search like you <span className='italic'>speak</span>. <br /> Export in <span className='italic'>seconds</span>.
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Just describe what you're looking for. Our AI understands your intent, finds matching moments with precise timestamps, and lets you export clips instantly. No re-editing required.
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <span className="text-primary font-bold text-base">✓</span>
+                <span>Semantic search</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-primary font-bold text-base">✓</span>
+                <span>Frame-level timestamps</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-primary font-bold text-base">✓</span>
+                <span>One-click export</span>
+              </div>
+            </div>
           </div>
+
+          <div className="rounded-xl overflow-hidden border border-border bg-muted/50 shadow-sm relative mx-auto">
+            <video
+              src="/left-truck-smashes-low-quality.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto"
+            />
+          </div>
+
         </div>
       </section >
 
@@ -288,12 +217,12 @@ export default function Home() {
                     <path d="M17.05 13.5H6.95m10.1 0l-.5-5h-9.1l-.5 5M6.5 19h11l.5-5H6l.5 5z" strokeWidth="1.5" stroke="currentColor" fill="none" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Windows 10+</h3>
+                <h3 className="text-xl font-semibold mb-2">Windows</h3>
                 <p className="text-muted-foreground text-sm mb-4">
                   Full support for Windows 10 and newer, with GPU acceleration on compatible systems.
                 </p>
-                <Button variant="link" onClick={() => handleDownload('windows')}>
-                  Download &rarr;
+                <Button variant="link" onClick={() => handleDownload('windows')} className='lowercase'>
+                  Download <Download className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
             </Card>
@@ -304,12 +233,12 @@ export default function Home() {
                     <path d="M17 2H7c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" strokeWidth="0" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">macOS 11+</h3>
+                <h3 className="text-xl font-semibold mb-2">macOS</h3>
                 <p className="text-muted-foreground text-sm mb-4">
                   Native app for Intel and Apple Silicon Macs with seamless Spotlight integration.
                 </p>
-                <Button variant="link" onClick={() => handleDownload('mac')}>
-                  Download &rarr;
+                <Button variant="link" onClick={() => handleDownload('mac')} className='lowercase'>
+                  Download <Download className="w-4 h-4" />
                 </Button>
               </CardContent>
             </Card>
