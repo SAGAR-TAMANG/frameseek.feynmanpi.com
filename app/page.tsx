@@ -145,7 +145,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <video src="/scan-building-2.mp4" autoPlay loop muted playsInline />
+            <video src="/scan-building-2.mp4" autoPlay loop muted playsInline poster='/scan-building-2-poster.webp' />
           </div>
         </div>
       </section >
