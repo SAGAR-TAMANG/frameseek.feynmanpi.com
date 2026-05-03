@@ -19,10 +19,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-6">
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Capabilities
-              </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Download
+                Star on GitHub
               </a>
               <div className="flex items-center gap-3">
                 <Button variant="outline" size="sm" className='lowercase'>Book a demo</Button>
