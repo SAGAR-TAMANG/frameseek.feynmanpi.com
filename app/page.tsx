@@ -70,9 +70,11 @@ export default function Home() {
             Available on Windows and Mac.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg">
-              Download
-              <Download className="w-4 h-4" />
+            <Button size="lg" asChild>
+              <Link href="#download">
+                Download
+                <Download className="w-4 h-4" />
+              </Link>
             </Button>
             <Button size="lg" variant="secondary">
               <Play className="mr-2 w-4 h-4" />
@@ -237,7 +239,7 @@ export default function Home() {
       </section >
 
       {/* Platform Support */}
-      <section className="py-20 sm:py-28 border-b border-border" >
+      <section id="download" className="py-20 sm:py-28 border-b border-border" >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-6">
             <Badge variant="secondary">
@@ -262,8 +264,8 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm mb-4">
                   Full support for Windows 10 and newer, with GPU acceleration on compatible systems.
                 </p>
-                <Button variant="link">
-                  Download &rarr;
+                <Button variant="link" asChild>
+                  <a href="/api/download?os=windows">Download &rarr;</a>
                 </Button>
               </CardContent>
             </Card>
@@ -278,8 +280,8 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm mb-4">
                   Native app for Intel and Apple Silicon Macs with seamless Spotlight integration.
                 </p>
-                <Button variant="link">
-                  Download &rarr;
+                <Button variant="link" asChild>
+                  <a href="/api/download?os=mac">Download &rarr;</a>
                 </Button>
               </CardContent>
             </Card>
