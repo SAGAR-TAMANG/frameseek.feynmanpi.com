@@ -35,18 +35,37 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 sm:py-32 border-b border-border">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-6">
-            <Badge variant="secondary">
-              Video Intelligence
-            </Badge>
-          </div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-pretty">
-            Find your moments, not your files.
+      <section className="relative overflow-hidden py-32 sm:py-60 border-b border-border">
+        {/* Blurred background video for large screens */}
+        <video
+          src="/helicoper-dystopian.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="hidden lg:block absolute inset-0 w-full h-full object-cover blur-3xl opacity-20 scale-110"
+        />
+
+        {/* Main clear video */}
+        <video
+          src="/helicoper-dystopian.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover lg:max-w-6xl lg:mx-auto opacity-50 bg-black"
+        />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <Badge variant="secondary">
+            Video Intelligence
+          </Badge>
+          <h1 className="!font-playfair text-5xl sm:text-6xl lg:text-8xl mb-6 font-normal">
+            Find your <span className='italic'>moments</span>, not your <span className='italic'>files</span>.
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Search your entire video library using natural language. Upload once, search infinitely. Available on Windows and Mac.
+            Search your entire video library using natural language.
+            <br />
+            Available on Windows and Mac.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg">
@@ -59,10 +78,10 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Feature 1: Video Indexing */}
-      <section className="py-20 sm:py-28 border-b border-border">
+      < section className="py-20 sm:py-28 border-b border-border" >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -107,10 +126,10 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Feature 2: Natural Language Search */}
-      <section className="py-20 sm:py-28 border-b border-border">
+      < section className="py-20 sm:py-28 border-b border-border" >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-last md:order-first">
@@ -160,10 +179,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Feature 3: Results & Export */}
-      <section className="py-20 sm:py-28 border-b border-border">
+      < section className="py-20 sm:py-28 border-b border-border" >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -213,10 +232,10 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Platform Support */}
-      <section className="py-20 sm:py-28 border-b border-border">
+      < section className="py-20 sm:py-28 border-b border-border" >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-6">
             <Badge variant="secondary">
@@ -234,7 +253,7 @@ export default function Home() {
               <CardContent className="pt-6">
                 <div className="w-16 h-16 bg-secondary rounded-lg mx-auto mb-4 flex items-center justify-center">
                   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.05 13.5H6.95m10.1 0l-.5-5h-9.1l-.5 5M6.5 19h11l.5-5H6l.5 5z" strokeWidth="1.5" stroke="currentColor" fill="none"/>
+                    <path d="M17.05 13.5H6.95m10.1 0l-.5-5h-9.1l-.5 5M6.5 19h11l.5-5H6l.5 5z" strokeWidth="1.5" stroke="currentColor" fill="none" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Windows 10+</h3>
@@ -250,7 +269,7 @@ export default function Home() {
               <CardContent className="pt-6">
                 <div className="w-16 h-16 bg-secondary rounded-lg mx-auto mb-4 flex items-center justify-center">
                   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17 2H7c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" strokeWidth="0"/>
+                    <path d="M17 2H7c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" strokeWidth="0" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">macOS 11+</h3>
@@ -264,10 +283,10 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* CTA Section */}
-      <section className="py-20 sm:py-32 border-b border-border">
+      < section className="py-20 sm:py-32 border-b border-border" >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Start finding in seconds.
@@ -282,10 +301,10 @@ export default function Home() {
             No credit card required. Download now.
           </p>
         </div>
-      </section>
+      </section >
 
       {/* Footer */}
-      <footer className="bg-card border-t border-border py-12">
+      < footer className="bg-card border-t border-border py-12" >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
@@ -330,7 +349,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </footer>
-    </div>
+      </footer >
+    </div >
   )
 }
