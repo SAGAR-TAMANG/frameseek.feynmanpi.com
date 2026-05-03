@@ -6,8 +6,36 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import Image from 'next/image'
 import Link from 'next/link'
+import { toast } from 'sonner'
 
 export default function Home() {
+  const handleDownload = async (os: 'windows' | 'mac') => {
+    const loadingId = toast.loading(`Locating latest ${os} version...`);
+    try {
+      const res = await fetch(`/api/download?os=${os}&urlOnly=true`);
+      const data = await res.json();
+
+      if (!res.ok || data.error) {
+        toast.error('Download failed', {
+          description: data.error || 'The requested version is not available yet.',
+          id: loadingId
+        });
+        return;
+      }
+
+      toast.success('Thank you for downloading!', {
+        description: 'Your download will begin shortly.',
+        id: loadingId
+      });
+      window.location.href = data.url;
+    } catch (error) {
+      toast.error('Download failed', {
+        description: 'A network error occurred.',
+        id: loadingId
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
@@ -19,7 +47,7 @@ export default function Home() {
               <span className="text-lg font-semibold lowercase tracking-tighter font-playfair italic text-start text-top">frameseek</span>
             </div>
             <div className="flex items-center gap-6">
-              <Link href="https://github.com/SAGAR-TAMANG/frameseek.feynmanpi.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="https://github.com/SAGAR-TAMANG/frameseek.feynmanpi.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors" target='_blank'>
                 Star on GitHub
               </Link>
               <div className="flex items-center gap-3">
@@ -264,8 +292,8 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm mb-4">
                   Full support for Windows 10 and newer, with GPU acceleration on compatible systems.
                 </p>
-                <Button variant="link" asChild>
-                  <a href="/api/download?os=windows">Download &rarr;</a>
+                <Button variant="link" onClick={() => handleDownload('windows')}>
+                  Download &rarr;
                 </Button>
               </CardContent>
             </Card>
@@ -280,8 +308,8 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm mb-4">
                   Native app for Intel and Apple Silicon Macs with seamless Spotlight integration.
                 </p>
-                <Button variant="link" asChild>
-                  <a href="/api/download?os=mac">Download &rarr;</a>
+                <Button variant="link" onClick={() => handleDownload('mac')}>
+                  Download &rarr;
                 </Button>
               </CardContent>
             </Card>
