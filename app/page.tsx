@@ -51,7 +51,11 @@ export default function Home() {
                 Star on GitHub
               </Link>
               <div className="flex items-center gap-3">
-                <Button variant="outline" size="sm" className='lowercase'>Book a demo</Button>
+                <Button variant="outline" size="sm" className='lowercase'>
+                  <Link href="https://cal.com/sagar-tamang" target="_blank" rel="noopener noreferrer">
+                    Talk to me
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -66,7 +70,7 @@ export default function Home() {
           autoPlay
           muted
           loop
-          poster='/helicopter-dystopian-poster.png'
+          poster='/helicopter-dystopian-poster.webp'
           preload='metadata'
           className="hidden lg:block absolute inset-0 w-full h-full object-cover blur-xl opacity-20 scale-110"
         >
@@ -79,7 +83,7 @@ export default function Home() {
           autoPlay
           muted
           loop
-          poster='/helicopter-dystopian-poster.png'
+          poster='/helicopter-dystopian-poster.webp'
           preload='metadata'
           className="absolute inset-0 w-full h-full object-cover lg:max-w-6xl lg:mx-auto opacity-50 bg-black"
         >
@@ -98,13 +102,11 @@ export default function Home() {
             Available on Windows and Mac.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" asChild>
-              <Link href="#download">
-                Download
-                <Download className="w-4 h-4" />
-              </Link>
+            <Button size="lg" onClick={() => document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Download className="mr-2 w-4 h-4" />
+              Download
             </Button>
-            <Button size="lg" variant="secondary">
+            <Button size="lg" variant="secondary" onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}>
               <Play className="mr-2 w-4 h-4" />
               Watch demo
             </Button>
@@ -149,7 +151,7 @@ export default function Home() {
       </section >
 
       {/* Feature 2 & 3: Search & Export Combined */}
-      <section className="py-20 sm:py-28 border-b border-border" >
+      <section id="demo" className="py-20 sm:py-28 border-b border-border" >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-3xl mx-auto mb-8">
@@ -188,6 +190,7 @@ export default function Home() {
               loop
               muted
               playsInline
+              poster='left-truck-smashes-poster.webp'
               className="w-full h-auto"
             />
           </div>
@@ -250,17 +253,20 @@ export default function Home() {
       <section className="py-20 sm:py-32 border-b border-border" >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="!font-playfair font-normal text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight">
-            Start finding in <span className='italic'>seconds</span>.
+            Completely <span className='italic'>free</span>.
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join creators and professionals who never waste time searching for footage again.
+            No sign in, no credit card required.
           </p>
-          <Button size="lg">
-            Get started free
+          <Button size="lg" className="mb-8 lowercase" onClick={() => document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })}>
+            Download now <Download className="w-4 h-4 ml-2" />
           </Button>
-          <p className="text-sm text-muted-foreground mt-6">
-            No credit card required. Download now.
-          </p>
+          <div className="text-sm text-muted-foreground flex items-center justify-center gap-2">
+            <span>You can support me by following me on</span>
+            <a href="https://x.com/sagar_builds" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors underline underline-offset-4">X</a>
+            <span>&amp;</span>
+            <a href="https://www.instagram.com/sagar_builds/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors underline underline-offset-4">Instagram</a>.
+          </div>
         </div>
       </section >
 
@@ -305,6 +311,8 @@ export default function Home() {
           <div className="border-t border-border pt-8">
             <p className="text-center text-sm text-muted-foreground">
               © 2026 frameseek. All rights reserved.
+              <br />
+              Built by <a href="https://x.com/sagar_builds" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors underline underline-offset-4">sagar_builds</a> for the World.
             </p>
           </div>
         </div>
