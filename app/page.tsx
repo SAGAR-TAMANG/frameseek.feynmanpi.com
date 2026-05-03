@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -18,9 +19,9 @@ export default function Home() {
               <span className="text-lg font-semibold lowercase tracking-tighter font-playfair italic text-start text-top">frameseek</span>
             </div>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="https://github.com/SAGAR-TAMANG/frameseek.feynmanpi.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Star on GitHub
-              </a>
+              </Link>
               <div className="flex items-center gap-3">
                 <Button variant="outline" size="sm" className='lowercase'>Book a demo</Button>
               </div>
@@ -33,23 +34,29 @@ export default function Home() {
       <section className="relative overflow-hidden py-32 sm:py-60 border-b border-border">
         {/* Blurred background video for large screens */}
         <video
-          src="/helicopter-dystopian.mp4"
-          autoPlay
-          loop
-          muted
           playsInline
+          autoPlay
+          muted
+          loop
+          poster='/helicopter-dystopian-poster.png'
+          preload='metadata'
           className="hidden lg:block absolute inset-0 w-full h-full object-cover blur-xl opacity-20 scale-110"
-        />
+        >
+          <source src="/helicopter-dystopian.mp4" type="video/mp4" />
+        </video>
 
         {/* Main clear video */}
         <video
-          src="/helicopter-dystopian.mp4"
-          autoPlay
-          loop
-          muted
           playsInline
+          autoPlay
+          muted
+          loop
+          poster='/helicopter-dystopian-poster.png'
+          preload='metadata'
           className="absolute inset-0 w-full h-full object-cover lg:max-w-6xl lg:mx-auto opacity-50 bg-black"
-        />
+        >
+          <source src="/helicopter-dystopian.mp4" type="video/mp4" />
+        </video>
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="secondary">
             Video Intelligence
@@ -85,8 +92,8 @@ export default function Home() {
                   Indexing
                 </Badge>
               </div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
-                Upload once. Index forever.
+              <h2 className="!font-playfair font-normal text-4xl sm:text-5xl mb-6 leading-tight">
+                Upload once. Index <span className='italic'>forever</span>.
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Drop your videos into frameseek and let AI analyze every frame. Our visual intelligence extracts objects, actions, text, and context — creating a searchable index of everything that happens in your footage.
@@ -151,8 +158,8 @@ export default function Home() {
                   Search
                 </Badge>
               </div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
-                Search like you speak.
+              <h2 className="!font-playfair font-normal text-4xl sm:text-5xl mb-6 leading-tight">
+                Search like you <span className='italic'>speak</span>.
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Just describe what you&apos;re looking for. "Red car passes by me." "Someone wearing a blue jacket." "People laughing in the park." Our AI understands your intent and finds matching moments in seconds.
@@ -186,8 +193,8 @@ export default function Home() {
                   Results
                 </Badge>
               </div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
-                Quick clips, ready to share.
+              <h2 className="!font-playfair font-normal text-4xl sm:text-5xl mb-6 leading-tight">
+                Quick clips, ready to <span className='italic'>share</span>.
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Every search result comes with precise timestamps. Jump straight to the moment you need, preview in context, and export clips in seconds. No re-editing required.
@@ -237,8 +244,8 @@ export default function Home() {
               Platform Support
             </Badge>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-8 leading-tight">
-            Built for your desktop.
+          <h2 className="!font-playfair font-normal text-4xl sm:text-5xl mb-8 leading-tight">
+            Built for your <span className='italic'>desktop</span>.
           </h2>
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
             frameseek is available as a native application for both Windows and macOS. Enjoy instant search and offline processing with the familiarity of a desktop app.
@@ -283,8 +290,8 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 sm:py-32 border-b border-border" >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Start finding in seconds.
+          <h2 className="!font-playfair font-normal text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight">
+            Start finding in <span className='italic'>seconds</span>.
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join creators and professionals who never waste time searching for footage again.
