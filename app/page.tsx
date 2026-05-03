@@ -1,9 +1,10 @@
 'use client'
 
-import { ArrowRight, Play } from 'lucide-react'
+import { ArrowRight, Download, Play } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -12,22 +13,19 @@ export default function Home() {
       <nav className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">fs</span>
-              </div>
-              <span className="text-lg font-semibold">frameseek</span>
+            <div className="flex items-center justify-center gap-2">
+              <Image src="/icon.svg" alt="Logo" width={24} height={24} className='bg-gray-100/30 rounded-lg' />
+              <span className="text-lg font-semibold lowercase tracking-tighter font-playfair italic text-start text-top">frameseek</span>
             </div>
             <div className="flex items-center gap-6">
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Capabilities
               </a>
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Pricing
+                Download
               </a>
               <div className="flex items-center gap-3">
-                <Button variant="outline" size="sm">Sign in</Button>
-                <Button size="sm">Book a demo</Button>
+                <Button variant="outline" size="sm" className='lowercase'>Book a demo</Button>
               </div>
             </div>
           </div>
@@ -38,17 +36,17 @@ export default function Home() {
       <section className="relative overflow-hidden py-32 sm:py-60 border-b border-border">
         {/* Blurred background video for large screens */}
         <video
-          src="/helicoper-dystopian.mp4"
+          src="/helicopter-dystopian.mp4"
           autoPlay
           loop
           muted
           playsInline
-          className="hidden lg:block absolute inset-0 w-full h-full object-cover blur-3xl opacity-20 scale-110"
+          className="hidden lg:block absolute inset-0 w-full h-full object-cover blur-xl opacity-20 scale-110"
         />
 
         {/* Main clear video */}
         <video
-          src="/helicoper-dystopian.mp4"
+          src="/helicopter-dystopian.mp4"
           autoPlay
           loop
           muted
@@ -69,10 +67,10 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg">
-              Get started free
-              <ArrowRight className="ml-2 w-4 h-4" />
+              Download
+              <Download className="w-4 h-4" />
             </Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="secondary">
               <Play className="mr-2 w-4 h-4" />
               Watch demo
             </Button>
@@ -81,7 +79,7 @@ export default function Home() {
       </section >
 
       {/* Feature 1: Video Indexing */}
-      < section className="py-20 sm:py-28 border-b border-border" >
+      <section className="py-20 sm:py-28 border-b border-border" >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -129,7 +127,7 @@ export default function Home() {
       </section >
 
       {/* Feature 2: Natural Language Search */}
-      < section className="py-20 sm:py-28 border-b border-border" >
+      <section className="py-20 sm:py-28 border-b border-border" >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-last md:order-first">
@@ -182,7 +180,7 @@ export default function Home() {
       </section >
 
       {/* Feature 3: Results & Export */}
-      < section className="py-20 sm:py-28 border-b border-border" >
+      <section className="py-20 sm:py-28 border-b border-border" >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -235,7 +233,7 @@ export default function Home() {
       </section >
 
       {/* Platform Support */}
-      < section className="py-20 sm:py-28 border-b border-border" >
+      <section className="py-20 sm:py-28 border-b border-border" >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-6">
             <Badge variant="secondary">
@@ -286,7 +284,7 @@ export default function Home() {
       </section >
 
       {/* CTA Section */}
-      < section className="py-20 sm:py-32 border-b border-border" >
+      <section className="py-20 sm:py-32 border-b border-border" >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Start finding in seconds.
@@ -304,14 +302,12 @@ export default function Home() {
       </section >
 
       {/* Footer */}
-      < footer className="bg-card border-t border-border py-12" >
+      <footer className="bg-card border-t border-border py-12" >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-xs">fs</span>
-                </div>
+                <Image src="/icon.svg" alt="Logo" width={24} height={24} className='bg-gray-100/30 rounded-lg' />
                 <span className="font-semibold">frameseek</span>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -345,7 +341,7 @@ export default function Home() {
           </div>
           <div className="border-t border-border pt-8">
             <p className="text-center text-sm text-muted-foreground">
-              © 2024 frameseek. All rights reserved.
+              © 2026 frameseek. All rights reserved.
             </p>
           </div>
         </div>
